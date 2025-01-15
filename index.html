@@ -3336,7 +3336,7 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 </li>
 <li>
 <p>Check if <strong>Git</strong> has been installed by opening your favourite terminal, and running <code>git --version</code>.  If successful, you should see something like this in your terminal:</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\git-version-verify.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\git-version-verify.png">
 </li>
 </ul>
 <h3 id="2-install-vcpckg">2. Install <em>vcpckg</em></h3>
@@ -3378,7 +3378,7 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 </li>
 <li>
 <p>Once installation completes, a terminal window will open. This confirms that <strong>MSYS2</strong> was installed succesfully.</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\msys-terminal-window.png">  
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\msys-terminal-window.png">  
 <p>You can go ahead and close this window.</p>
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
@@ -3398,8 +3398,8 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 <p>Navigate to the default installation folder for MSYS2 (<code>C:/msys64</code>)</p>
 </li>
 <li>
-<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\mingw32-shell.png">
+<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\mingw32-shell.png">
 </li>
 </ul>
 <h3 id="2-updating-the-package-database">2. Updating the package database</h3>
@@ -3408,7 +3408,7 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 <p>Update the package database and all installed packages by running the following command in the shell:</p>
 <pre><code class="language-bash">pacman -Syu
 </code></pre>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\mingw32-update-packages.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\mingw32-update-packages.png">
 </li>
 <li>
 <p>When prompted with <strong><em>Proceed with installation?</em></strong>, type <code>Y</code> in the terminal and press <code>Enter</code>.</p>
@@ -3428,7 +3428,7 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <p>In the <strong>MINGW32</strong> shell, execute the following command to install all the required packages:</p>
 <pre><code class="language-bash">pacman -S make git mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-cmake
 </code></pre>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\mingw32-install-required-packages.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\mingw32-install-required-packages.png">
 </li>
 <li>
 <p>When prompted with <strong><em>Proceed with installation?</em></strong>, type <code>Y</code> in the terminal and press <code>Enter</code>.</p>
@@ -3438,7 +3438,7 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <pre><code class="language-bash"><span class="hljs-built_in">which</span> ninja; <span class="hljs-built_in">which</span> make; <span class="hljs-built_in">which</span> cmake; <span class="hljs-built_in">which</span> gcc; <span class="hljs-built_in">which</span> g++; <span class="hljs-built_in">which</span> git
 </code></pre>
 <p>If the packages <em>have</em> been installed succesfully, each command will return the path to its respective executable:</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\mingw32-verify-installed-packages.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\mingw32-verify-installed-packages.png">
 </li>
 </ul>
 <h3 id="4-downloading-the-games-source-code">4. Downloading the game's source code</h3>
@@ -3472,7 +3472,7 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <pre><code class="language-bash">git branch
 </code></pre>
 <p>You will see an asterisk (*) next to the current branch, which should say <code>(HEAD detached at v2.3)</code>.</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\git-verify-branch.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\git-verify-branch.png">
 </li>
 </ul>
 <h3 id="5-configuring-the-game-for-compilation">5. Configuring the game for compilation</h3>
@@ -3487,7 +3487,7 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <pre><code class="language-bash">cmake --preset ninja-x86_mingw_static_vcpkg-release
 </code></pre>
 <p><code>cmake</code> will begin configuriation and grab <em>all</em> the required dependecies needed to compile the game via <code>vcpkg</code>.</p>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\cmake-configure.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\cmake-configure.png">
 <p>Since this is your first time running the configuration, it may take some time, so be patient.<br>
 Future configurations will be faster.</p>
 </li>
@@ -3502,7 +3502,7 @@ Future configurations will be faster.</p>
 <h5 id="1-open-the-shell-configuration-file-bashrc-using-nano-with-the-following-command">1. Open the shell configuration file <code>(~/.bashrc)</code> using <code>nano</code> with the following command:</h5>
 <pre><code class="language-bash">nano ~/.bahsrc
 </code></pre>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\nano-edit-bashrc.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\nano-edit-bashrc.png">
 <h5 id="2-add-the-following-line-to-the-file">2. Add the following line to the file:</h5>
 <pre><code class="language-bash"><span class="hljs-built_in">export</span> VCPKG_ROOT=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/vcpkg&quot;</span>
 </code></pre>
@@ -3540,7 +3540,7 @@ Depending on your computer's hardware, this can either be quick or take some tim
 <p>The executable can be found in the <code>build</code> directory:</p>
 <pre><code>build/ninja-x86_mingw_static_vcpkg-release/bin
 </code></pre>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\compiled-executable-ls.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\compiled-executable-ls.png">
 <p>This path is relative to the <code>RingRacers</code> directory. The terminal opens in your home directory by default (<code>C:/Users/&lt;your username&gt;</code>).<br>
 Therefore, the full path to your compiled game would be:</p>
 <pre><code>C:/Users/&lt;your username/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release/bin/ringracers_v2.3.exe
@@ -3548,7 +3548,7 @@ Therefore, the full path to your compiled game would be:</p>
 <p>Based on the example provided in this this guide, the full path to the compiled game would be:</p>
 <pre><code>C:/Users/SURANI-PC/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release/bin/ringracers_v2.3.exe
 </code></pre>
-  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\executable-path-windows.png">
+  <img src="file:///c:\Users\SURANI-PC\repos\blonded\rr-compile-windows-guide\assets\executable-path-windows.png">
 </li>
 <li>
 <p>To run the executable, you need to copy it into the folder where you've already installed Dr. Robotnik's Ring Racers.</p>

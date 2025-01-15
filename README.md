@@ -26,7 +26,7 @@ Otherwise, proceed directly to the **Compiling** section.
     > Leave each option set to its default value.
 - Check if **Git** has been installed by opening your favourite terminal, and running `git --version`.  If successful, you should see something like this in your terminal:
 
-    <img src="./git-version-verify.png">
+    <img src="./assets/git-version-verify.png">
 
 ### 2. Install _vcpckg_
 
@@ -67,7 +67,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
 - Once installation completes, a terminal window will open. This confirms that **MSYS2** was installed succesfully.
 
-    <img src="./msys-terminal-window.png">  
+    <img src="./assets/msys-terminal-window.png">  
 
     You can go ahead and close this window.
 
@@ -85,9 +85,9 @@ Otherwise, proceed directly to the **Compiling** section.
 
 - Navigate to the default installation folder for MSYS2 (`C:/msys64`)
 
-- Open the **MINGW32** shell (`mingw32.exe`), as denoted by the <img src="./mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.
+- Open the **MINGW32** shell (`mingw32.exe`), as denoted by the <img src="./assets/mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.
 
-    <img src="./mingw32-shell.png">
+    <img src="./assets/mingw32-shell.png">
 
 ### 2. Updating the package database
 
@@ -97,7 +97,7 @@ Otherwise, proceed directly to the **Compiling** section.
     pacman -Syu
     ```
 
-    <img src="./mingw32-update-packages.png">
+    <img src="./assets/mingw32-update-packages.png">
 
 - When prompted with **_Proceed with installation?_**, type `Y` in the terminal and press `Enter`.
 
@@ -118,7 +118,7 @@ Otherwise, proceed directly to the **Compiling** section.
     pacman -S make git mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-cmake
     ```
 
-    <img src="./mingw32-install-required-packages.png">
+    <img src="./assets/mingw32-install-required-packages.png">
 
 - When prompted with **_Proceed with installation?_**, type `Y` in the terminal and press `Enter`.
 
@@ -130,7 +130,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     If the packages _have_ been installed succesfully, each command will return the path to its respective executable:
 
-    <img src="./mingw32-verify-installed-packages.png">
+    <img src="./assets/mingw32-verify-installed-packages.png">
 
 ### 4. Downloading the game's source code
 
@@ -166,7 +166,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     You will see an asterisk (*) next to the current branch, which should say `(HEAD detached at v2.3)`.
 
-    <img src="./git-verify-branch.png">
+    <img src="./assets/git-verify-branch.png">
 
 
 
@@ -185,7 +185,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     `cmake` will begin configuriation and grab *all* the required dependecies needed to compile the game via `vcpkg`.
 
-    <img src="./cmake-configure.png">
+    <img src="./assets/cmake-configure.png">
 
     Since this is your first time running the configuration, it may take some time, so be patient.\
     Future configurations will be faster.
@@ -205,7 +205,7 @@ Otherwise, proceed directly to the **Compiling** section.
     ```bash
     nano ~/.bahsrc
     ```
-    <img src="./nano-edit-bashrc.png">
+    <img src="./assets/nano-edit-bashrc.png">
 
     ##### 2. Add the following line to the file:
 
@@ -253,7 +253,7 @@ Otherwise, proceed directly to the **Compiling** section.
     build/ninja-x86_mingw_static_vcpkg-release/bin
     ```
 
-    <img src="./compiled-executable-ls.png">
+    <img src="./assets/compiled-executable-ls.png">
 
     This path is relative to the `RingRacers` directory. The terminal opens in your home directory by default (`C:/Users/<your username>`).\
     Therefore, the full path to your compiled game would be:
@@ -267,7 +267,7 @@ Otherwise, proceed directly to the **Compiling** section.
     C:/Users/SURANI-PC/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release/bin/ringracers_v2.3.exe
     ```
 
-    <img src="./executable-path-windows.png">
+    <img src="./assets/executable-path-windows.png">
 
 - To run the executable, you need to copy it into the folder where you've already installed Dr. Robotnik's Ring Racers.
 </details>
