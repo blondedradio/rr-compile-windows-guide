@@ -12,6 +12,8 @@ Otherwise, proceed directly to the **Compiling** section.
 
 ---
 
+<video src="/assets/vcpkg-install-video.mp4" controls>
+
 <details>
     <summary>
         <h3 style="margin-top: 0 !important; margin-bottom: 0 !important">Prerequisites</h3>
@@ -53,8 +55,6 @@ Otherwise, proceed directly to the **Compiling** section.
     ```bash
     ./vcpkg --version
     ```
-
-    <img src="./vcpkg-version-verify.png">  
 
     ---
     <small>If you're unsure, refer to the following video:</small>
