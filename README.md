@@ -12,8 +12,6 @@ Otherwise, proceed directly to the **Compiling** section.
 
 ---
 
-<video src="/assets/vcpkg-install-video.mp4" controls>
-
 <details>
     <summary>
         <h3 style="margin-top: 0 !important; margin-bottom: 0 !important">Prerequisites</h3>
@@ -58,7 +56,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Installing <strong>vcpkg</strong></summary><video src="./vcpkg-install-video.mp4" controls></details>
+    > <details><summary>Installing <strong>vcpkg</strong></summary><video src="./assets/vcpkg-install-video.mp4" controls></details>
 
 ### 3. Install _MSYS2_
 
@@ -75,7 +73,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Installing <strong>MSYS2</strong></summary><video src="./msys-install-video.mp4" controls></details>
+    > <details><summary>Installing <strong>MSYS2</strong></summary><video src="./assets/msys-install-video.mp4" controls></details>
 </details>
 
 <details>
@@ -148,7 +146,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Cloning the repository</summary><video src="./git-clone-rr.mp4" controls></details>
+    > <details><summary>Cloning the repository</summary><video src="./assets/git-clone-rr.mp4" controls></details>
 
 - Navigate to the new `RingRacersRepo` folder by running the command:
 
@@ -221,7 +219,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Video reference</summary><video src="./vcpkg-bashrc.mp4" controls></details>
+    > <details><summary>Video reference</summary><video src="./assets/vcpkg-bashrc.mp4" controls></details>
     </small>
 
 ### 6. Compiling the game
@@ -238,7 +236,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Compiling the game with cmake</summary><video src="./cmake-game-compile.mp4" controls></details>
+    > <details><summary>Compiling the game with cmake</summary><video src="./assets/cmake-game-compile.mp4" controls></details>
 
 
 - If the game has succesfully compiled, you should see a message in the terminal similar to this:
