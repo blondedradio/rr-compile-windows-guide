@@ -58,7 +58,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Installing <strong>vcpkg</strong></summary><video src="https://github.com/blondedradio/rr-compile-windows-guide/blob/main/vcpkg-install-video.mp4?raw=true" controls></details>
+    > <details><summary>Installing <strong>vcpkg</strong></summary><video src="./vcpkg-install-video.mp4" controls></details>
 
 ### 3. Install _MSYS2_
 
@@ -75,7 +75,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Installing <strong>MSYS2</strong></summary><video src="https://github.com/blondedradio/rr-compile-windows-guide/blob/main/msys-install-video.mp4?raw=true" controls></details>
+    > <details><summary>Installing <strong>MSYS2</strong></summary><video src="./msys-install-video.mp4" controls></details>
 </details>
 
 <details>
@@ -148,7 +148,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Cloning the repository</summary><video src="https://github.com/blondedradio/rr-compile-windows-guide/blob/main/git-clone-rr.mp4?raw=true" controls></details>
+    > <details><summary>Cloning the repository</summary><video src="./git-clone-rr.mp4" controls></details>
 
 - Navigate to the new `RingRacersRepo` folder by running the command:
 
@@ -221,7 +221,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Video reference</summary><video src="https://github.com/blondedradio/rr-compile-windows-guide/blob/main/vcpkg-bashrc.mp4?raw=true" controls></details>
+    > <details><summary>Video reference</summary><video src="./vcpkg-bashrc.mp4" controls></details>
     </small>
 
 ### 6. Compiling the game
@@ -238,7 +238,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Compiling the game with cmake</summary><video src="https://github.com/blondedradio/rr-compile-windows-guide/blob/main/cmake-game-compile.mp4?raw=true" controls></details>
+    > <details><summary>Compiling the game with cmake</summary><video src="./cmake-game-compile.mp4" controls></details>
 
 
 - If the game has succesfully compiled, you should see a message in the terminal similar to this:
