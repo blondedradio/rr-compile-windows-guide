@@ -3329,8 +3329,8 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
     </summary>
 <h3 id="1-set-up-environment-variables">1. Set up environment variables</h3>
 <blockquote>
-<p>One of the required packages, <strong>MSYS2</strong>, uses the <code>$HOME</code> environment variable. <br>
-To follow this guide accurately, you need to ensure that it exists on your system.</p>
+<p>One of the required packages, <strong>MSYS2</strong>, uses the <code>$HOME</code> and <code>$USERPROFILE</code> environment variables. <br>
+To follow this guide accurately, you need to ensure that these exist on your system.</p>
 </blockquote>
 <ul>
 <li>
@@ -3339,7 +3339,7 @@ To follow this guide accurately, you need to ensure that it exists on your syste
 <p>This will open the <strong>Environment Variables</strong> window, where you'll see the existing system environment variables.<br>
 Focus on the '<strong>User variables</strong>' section.</p>
 <img src=".\assets\vmconnect_kIyIQIibFL.png">
-<p>If the <code>HOME</code> variable is present, proceed to the <a href="#2-install-git">next step</a>.<br>
+<p>If the <code>HOME</code> and <code>USERPROFILE</code> variables are present, proceed to the <a href="#2-install-git">next step</a>.<br>
 If <em>not</em>, continue reading.</p>
 </li>
 <li>
@@ -3361,16 +3361,32 @@ If <em>not</em>, continue reading.</p>
 </tbody>
 </table>
 <img src=".\assets\vmconnect_UU4YxnYQKL.png">
-<p>Replace <code>&lt;your username&gt;</code> with your actual username.</p>
+<p>Replace <code>&lt;your username&gt;</code> with your actual username.<br>
+Click <code>OK</code> on the bottom-right when you're finished.</p>
+<p>Repeat the same process for the <code>USERPROFILE</code> variable:</p>
+<table>
+<thead>
+<tr>
+<th>Variable name:</th>
+<th>USERPROFILE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Variable value</strong>:</td>
+<td>C:\Users\&lt;your username&gt;</td>
+</tr>
+</tbody>
+</table>
+<img src=".\assets\4cl62XIRHU.png">
 </li>
 <li>
-<p>When you've completed the form, press the <code>OK</code> button to return to the '<strong>Environment Variables</strong>' window.<br>
-There should now be a line in the '<strong>User variables</strong>' section for the <code>HOME</code> variable.</p>
-<p>Press <code>OK</code> on the bottom-right to close the window.</p>
+<p>The <code>HOME</code> and <code>USERPROFILE</code> variables should be visible in  '<strong>User variables</strong>' section.</p>
+<p>Click <code>OK</code> on the bottom-right to close the '<strong>Environment Variables</strong> window.</p>
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
-<details><summary>Adding the HOME environment variable</summary><video src="./assets/vmconnect_Jeer1a5fPc.mp4" controls></details>
+<details><summary>Adding the HOME and USERPROFILE environment variables</summary><video src="./assets/vmconnect_hAiC63eOpV.mp4" controls></details>
 </blockquote>
 </li>
 </ul>

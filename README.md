@@ -24,8 +24,8 @@ Otherwise, proceed directly to the **Compiling** section.
     </summary>
 
 ### 1. Set up environment variables
-> One of the required packages, **MSYS2**, uses the `$HOME` environment variable. \
-> To follow this guide accurately, you need to ensure that it exists on your system.
+> One of the required packages, **MSYS2**, uses the `$HOME` and `$USERPROFILE` environment variables. \
+> To follow this guide accurately, you need to ensure that these exist on your system.
 
 - Search for 'environment variables' in the Start Menu and select '**Edit environment variables for your account**':
   
@@ -36,7 +36,7 @@ Otherwise, proceed directly to the **Compiling** section.
 
   <img src="./assets/vmconnect_kIyIQIibFL.png">
 
-  If the `HOME` variable is present, proceed to the [next step](#2-install-git).\
+  If the `HOME` and `USERPROFILE` variables are present, proceed to the [next step](#2-install-git).\
   If _not_, continue reading.
 
 - Click on the `New...` button. This will open a `New User Variable` window:
@@ -50,16 +50,24 @@ Otherwise, proceed directly to the **Compiling** section.
 
   <img src="./assets/vmconnect_UU4YxnYQKL.png">
 
-  Replace `<your username>` with your actual username.
+  Replace `<your username>` with your actual username.\
+  Click `OK` on the bottom-right when you're finished.
 
-- When you've completed the form, press the `OK` button to return to the '**Environment Variables**' window.\
-  There should now be a line in the '**User variables**' section for the `HOME` variable. 
+  Repeat the same process for the `USERPROFILE` variable:
 
-  Press `OK` on the bottom-right to close the window.
+  | Variable name: | USERPROFILE |
+  | --- | --- |
+  | **Variable value**: | C:\\Users\\\<your username>
+  
+  <img src="./assets/4cl62XIRHU.png">
+
+- The `HOME` and `USERPROFILE` variables should be visible in  '**User variables**' section.
+
+  Click `OK` on the bottom-right to close the '**Environment Variables** window.
 
     ---
     <small>If you're unsure, refer to the following video:</small>
-    > <details><summary>Adding the HOME environment variable</summary><video src="./assets/vmconnect_Jeer1a5fPc.mp4" controls></details>
+    > <details><summary>Adding the HOME and USERPROFILE environment variables</summary><video src="./assets/vmconnect_hAiC63eOpV.mp4" controls></details>
 
 ### 2. Install _Git_
 
