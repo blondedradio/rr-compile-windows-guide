@@ -3307,6 +3307,13 @@ body,
 <blockquote>
 <p><small>ℹ️ This guide is intended for Windows 10 x64, but should also apply for Windows 11.</small></p>
 </blockquote>
+<p>⚠️ Your <strong>Windows Defender</strong> may be triggered when building the game.
+<small></p>
+<blockquote>
+<p>This might happen because of certain files being generated during the compilation process.<br>
+If this <em>does</em> happen, you can safely allow the actions.
+</small></p>
+</blockquote>
 <p>The following programs are required to proceed:</p>
 <ul>
 <li><a href="https://git-scm.com/">Git for Windows</a></li>
@@ -3320,7 +3327,54 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
     <summary>
         <h3 style="margin-top: 0 !important; margin-bottom: 0 !important">Prerequisites</h3>
     </summary>
-<h3 id="1-install-git">1. Install <em>Git</em></h3>
+<h3 id="1-set-up-environment-variables">1. Set up environment variables</h3>
+<blockquote>
+<p>One of the required packages, <strong>MSYS2</strong>, uses the <code>$HOME</code> environment variable. <br>
+To follow this guide accurately, you need to ensure that it exists on your system.</p>
+</blockquote>
+<ul>
+<li>
+<p>Search for 'environment variables' in the Start Menu and select '<strong>Edit environment variables for your account</strong>':</p>
+<img src=".\assets\rr-compile-windows-guide\assets\vmconnect_qbo07sqsKT.png">
+<p>This will open the <strong>Environment Variables</strong> window, where you'll see the existing system environment variables.<br>
+Focus on the '<strong>User variables</strong>' section.</p>
+<img src=".\assets\rr-compile-windows-guide\assets\vmconnect_kIyIQIibFL.png">
+<p>If the <code>HOME</code> variable is present, proceed to the <a href="#2-install-git">next step</a>.<br>
+If <em>not</em>, continue reading.</p>
+</li>
+<li>
+<p>Click on the <code>New...</code> button. This will open a <code>New User Variable</code> window:</p>
+<img src=".\assets\rr-compile-windows-guide\assets\vmconnect_njEycVGoIg.png">
+<p>Add the <code>HOME</code> variable by filling out the form, as shown below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable name:</th>
+<th>HOME</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Variable value</strong>:</td>
+<td>C:\Users\&lt;your username&gt;</td>
+</tr>
+</tbody>
+</table>
+<img src=".\assets\rr-compile-windows-guide\assets\vmconnect_UU4YxnYQKL.png">
+<p>Replace <code>&lt;your username&gt;</code> with your actual username.</p>
+</li>
+<li>
+<p>When you've completed the form, press the <code>OK</code> button to return to the '<strong>Environment Variables</strong>' window.<br>
+There should now be a line in the '<strong>User variables</strong>' section for the <code>HOME</code> variable.</p>
+<p>Press <code>OK</code> on the bottom-right to close the window.</p>
+<hr>
+<p><small>If you're unsure, refer to the following video:</small></p>
+<blockquote>
+<details><summary>Adding the HOME environment variable</summary><video src="./assets/vmconnect_Jeer1a5fPc.mp4" controls></details>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-install-git">2. Install <em>Git</em></h3>
 <ul>
 <li>
 <p>Download <a href="https://git-scm.com/downloads/win"><strong>Git for Windows</strong></a>.</p>
@@ -3335,18 +3389,36 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 </blockquote>
 </li>
 <li>
-<p>Check if <strong>Git</strong> has been installed by opening your favourite terminal, and running <code>git --version</code>.  If successful, you should see something like this in your terminal:</p>
-  <img src=".\assets\git-version-verify.png">
+<p><a id="open-powershell"></a>Open <img src=".\assets\rr-compile-windows-guide\assets\powershell-icon.png" width="20" height="14" style="vertical-align: middle">  Windows PowerShell by searching for it in the Start Menu.</p>
+<p><small>If you're unsure, refer to the following video:</small></p>
+<blockquote>
+<details><summary>Opening Windows PowerShell</summary><video src="./assets/vmconnect_dmSnbCnu2M.mp4" controls></details>
+</blockquote>
+</li>
+<li>
+<p>Check if <strong>Git</strong> has been installed by running the following command in the terminal:</p>
+<pre><code class="language-powershell">git <span class="hljs-literal">--version</span>
+</code></pre>
+<p>If successful, you should see a message like this in your terminal:</p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_XX74TfqE18.gif">
+<p>Keep this terminal <strong><em>open</em></strong> for the <a href="#3-install-vcpckg">next step</a>.</p>
 </li>
 </ul>
-<h3 id="2-install-vcpckg">2. Install <em>vcpckg</em></h3>
+<h3 id="3-install-vcpckg">3. Install <em>vcpckg</em></h3>
 <ul>
 <li>
+<p>At this point, a PowerShell terminal should be open, defaulting to your home directory (<code>C:\Users\&lt;your username&gt;</code>), as shown here:</p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_rZrk2hMb9s.png">
+<blockquote>
+<p><small>If you <em>haven't</em> got <img src=".\assets\rr-compile-windows-guide\assets\powershell-icon.png" width="20" height="14" style="vertical-align: middle"> Windows PowerShell open, follow <a href="#open-powershell">these instructions</a>.</small></p>
+</blockquote>
+</li>
+<li>
 <p>Clone the <strong>vcpkg</strong> repository into a folder of your choice using <strong>Git</strong>, by running the following command in your terminal:</p>
-<pre><code class="language-bash"> git <span class="hljs-built_in">clone</span> https://github.com/microsoft/vcpkg.git
+<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/microsoft/vcpkg.git
 </code></pre>
-<p>By default, your terminal <em>should</em> open in your home folder, so the full path of the repository would be:</p>
-<pre><code class="language-powershell">C:/Users/&lt;your username&gt;/vcpkg
+<p>This will create a folder in your home directory named <code>vcpkg</code>, therefore, the full path of the repository should be:</p>
+<pre><code class="language-powershell">C:\Users\&lt;your username&gt;\vcpkg
 </code></pre>
 </li>
 <li>
@@ -3356,16 +3428,18 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 </li>
 <li>
 <p>Check if <strong>vcpkg</strong> has been installed by running the following command:</p>
-<pre><code class="language-bash">./vcpkg --version
+<pre><code class="language-bash">.\vcpkg --version
 </code></pre>
+<p>If successful, the terminal will display the version of <code>vcpkg</code> that has been installed:</p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_70IhSxQpcc.png">
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
-<details><summary>Installing <strong>vcpkg</strong></summary><video src="./assets/vcpkg-install-video.mp4" controls></details>
+<details><summary>Installing <strong>vcpkg</strong></summary><video src="./assets/vmconnect_H2wqoaJ797.mp4" controls></details>
 </blockquote>
 </li>
 </ul>
-<h3 id="3-install-msys2">3. Install <em>MSYS2</em></h3>
+<h3 id="4-install-msys2">4. Install <em>MSYS2</em></h3>
 <ul>
 <li>
 <p>Download <a href="https://www.msys2.org/">the MSYS2 installer</a>.</p>
@@ -3378,28 +3452,38 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 </li>
 <li>
 <p>Once installation completes, a terminal window will open. This confirms that <strong>MSYS2</strong> was installed succesfully.</p>
-  <img src=".\assets\msys-terminal-window.png">  
-<p>You can go ahead and close this window.</p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_RAgEMGJ6mI.png">  
+<p>You may now close this window and proceed to the <a href="#compiling-time">Compiling</a> instructions.</p>
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
-<details><summary>Installing <strong>MSYS2</strong></summary><video src="./assets/msys-install-video.mp4" controls></details>
+<details><summary>Installing <strong>MSYS2</strong></summary><video src="./assets/vmconnect_M3QC8g8tcl.mp4" controls></details>
 </blockquote>
 </li>
 </ul>
 </details>
 <details>
     <summary>
-        <h3 style="margin-top: 0 !important; margin-bottom: 1!important">Compiling</h3>
+        <a id="compiling-time"></a><h3 style="margin-top: 0 !important; margin-bottom: 1!important">Compiling</h3>
     </summary>
 <h3 id="1-opening-msys2">1. Opening <em>MSYS2</em></h3>
+<blockquote>
+<p>ℹ️ Copy (Ctrl+C) and paste (Ctrl+V) shortcuts do not work inside MSYS2 shells. You <em>can</em> still right-click to copy and paste.</p>
+</blockquote>
 <ul>
 <li>
-<p>Navigate to the default installation folder for MSYS2 (<code>C:/msys64</code>)</p>
-</li>
-<li>
-<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src=".\assets\mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
-  <img src=".\assets\mingw32-shell.png">
+<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src=".\assets\rr-compile-windows-guide\assets\mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
+<blockquote>
+<p><small> The MINGW32 shell is a <strong>terminal</strong> provided by MSYS2.</small></p>
+</blockquote>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_vakLX3DiJs.png">
+<p>Like PowerShell, this terminal opens in your home directory by default (<code>C:\Users\&lt;your username&gt;</code>).<br>
+As represented by the tilde symbol (<code>~</code>).</p>
+<hr>
+<p><small>If you're unsure, refer to the following video:</small></p>
+<blockquote>
+<details><summary>Opening the <strong>MINGW32</strong> shell</summary><video src="./assets/vmconnect_S8GI4PlHyD.mp4" controls></details>
+</blockquote>
 </li>
 </ul>
 <h3 id="2-updating-the-package-database">2. Updating the package database</h3>
@@ -3408,18 +3492,16 @@ Otherwise, proceed directly to the <strong>Compiling</strong> section.</p>
 <p>Update the package database and all installed packages by running the following command in the shell:</p>
 <pre><code class="language-bash">pacman -Syu
 </code></pre>
-  <img src=".\assets\mingw32-update-packages.png">
-</li>
-<li>
-<p>When prompted with <strong><em>Proceed with installation?</em></strong>, type <code>Y</code> in the terminal and press <code>Enter</code>.</p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_NNfPQ9cFMb.gif">
+<p>When prompted with <code>Proceed with installation? [Y/n]</code>, ype <code>Y</code> in the terminal and press <code>Enter</code>.</p>
 </li>
 <li>
 <p>After updating, you <em>might</em> see a message prompting you to <strong>close</strong> the terminal window, like this:</p>
 <pre><code>To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]
 </code></pre>
-<p>If you <em>don't</em>, continue to the <a href="#3-installing-the-required-packages">next step</a>.</p>
+<p>If you <em>don't</em> see this message, continue to the <a href="#3-installing-the-required-packages">next step</a>.</p>
 <p>If you <em>do</em>, type <code>Y</code> in the terminal and press <code>Enter</code>.<br>
-To open the terminal window again, follow the instructions in <a href="#1-opening-msys2">Step 1</a>.</p>
+To open the terminal window again, follow the instructions in <a href="#1-opening-msys2">step 1</a>.</p>
 </li>
 </ul>
 <h3 id="3-installing-the-required-packages">3. Installing the required packages</h3>
@@ -3428,17 +3510,20 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <p>In the <strong>MINGW32</strong> shell, execute the following command to install all the required packages:</p>
 <pre><code class="language-bash">pacman -S make git mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-cmake
 </code></pre>
-  <img src=".\assets\mingw32-install-required-packages.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_8H2ChLGlve.png">
+<p>When prompted with:</p>
+<pre><code>Proceed with installation? [Y/n]
+</code></pre>
+<p>Type <code>Y</code> in the terminal and press <code>Enter</code>.<br>
+Wait for the packages to finish downloading.</p>
 </li>
 <li>
-<p>When prompted with <strong><em>Proceed with installation?</em></strong>, type <code>Y</code> in the terminal and press <code>Enter</code>.</p>
-</li>
-<li>
-<p>To verify that all the required packages have been installed sucessfully, run the follow commands in the terminal:</p>
-<pre><code class="language-bash"><span class="hljs-built_in">which</span> ninja; <span class="hljs-built_in">which</span> make; <span class="hljs-built_in">which</span> cmake; <span class="hljs-built_in">which</span> gcc; <span class="hljs-built_in">which</span> g++; <span class="hljs-built_in">which</span> git
+<p>To verify that all the required packages have been installed sucessfully, run the follow command in the terminal:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">which</span> ninja make cmake gcc g++ git
 </code></pre>
 <p>If the packages <em>have</em> been installed succesfully, each command will return the path to its respective executable:</p>
-  <img src=".\assets\mingw32-verify-installed-packages.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_DN5b3c5GFJ.png">
+<p>Keep this terminal <strong><em>open</em></strong> for the <a href="#4-downloading-the-games-source-code">next step</a>.</p>
 </li>
 </ul>
 <h3 id="4-downloading-the-games-source-code">4. Downloading the game's source code</h3>
@@ -3447,32 +3532,47 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 </blockquote>
 <ul>
 <li>
-<p>Clone the repository for <em>Ring Racers</em>, with the following command:</p>
-<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/KartKrewDev/RingRacers.git RingRacersRepo
+<p>Verify that the terminal is in your home directory by running the following command:</p>
+<pre><code>cd $HOME
 </code></pre>
-<p>This will create a new folder named <code>RingRacersRepo</code>, which will contain the game's source code.</p>
-<hr>
-<p><small>If you're unsure, refer to the following video:</small></p>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_oWPQN1GUCv.png">
 <blockquote>
-<details><summary>Cloning the repository</summary><video src="./assets/git-clone-rr.mp4" controls></details>
+<p><small>The tilde symbol (~) represents your home directory.</small></p>
 </blockquote>
 </li>
 <li>
-<p>Navigate to the new <code>RingRacersRepo</code> folder by running the command:</p>
+<p>Clone the repository for <em>Ring Racers</em>, with the following command:</p>
+<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/KartKrewDev/RingRacers.git RingRacersRepo
+</code></pre>
+<p>This will create a new folder in your home directory named <code>RingRacersRepo</code>, which will contain the game's source code.</p>
+<hr>
+<p><small>If you're unsure, refer to the following video:</small></p>
+<blockquote>
+<details><summary>Cloning the repository</summary><video src="./assets/vmconnect_FfnfEAf3XK.mp4" controls></details>
+</blockquote>
+</li>
+<li>
+<p><a id="ringracers-repo-inst"></a>Navigate to the new <code>RingRacersRepo</code> folder by running the command:</p>
 <pre><code class="language-bash"><span class="hljs-built_in">cd</span> RingRacersRepo
 </code></pre>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_NNr7fgOKer.gif">
 </li>
 <li>
 <p>Switch the current branch to <strong>v2.3</strong> with the following command:</p>
 <pre><code class="language-bash">git checkout v2.3
 </code></pre>
+<blockquote>
+<p><small>If you encounter any errors when running this command, make <em>sure</em> that you're in the <code>RingRacersRepo</code> folder.<br>
+Refer to the <a href="#ringracers-repo-inst">previous</a> step for instructions. </small></p>
+</blockquote>
 </li>
 <li>
 <p>Verify that your branch is set to <strong>v2.3</strong>, by running:</p>
 <pre><code class="language-bash">git branch
 </code></pre>
 <p>You will see an asterisk (*) next to the current branch, which should say <code>(HEAD detached at v2.3)</code>.</p>
-  <img src=".\assets\git-verify-branch.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_uv9MbLYwEU.png">
+<p>Keep this terminal <strong><em>open</em></strong> for the <a href="#5-configuring-the-game-for-compilation">next step</a>.</p>
 </li>
 </ul>
 <h3 id="5-configuring-the-game-for-compilation">5. Configuring the game for compilation</h3>
@@ -3487,32 +3587,22 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <pre><code class="language-bash">cmake --preset ninja-x86_mingw_static_vcpkg-release
 </code></pre>
 <p><code>cmake</code> will begin configuriation and grab <em>all</em> the required dependecies needed to compile the game via <code>vcpkg</code>.</p>
-  <img src=".\assets\cmake-configure.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_UYKsYjhbCQ.png">
 <p>Since this is your first time running the configuration, it may take some time, so be patient.<br>
 Future configurations will be faster.</p>
 </li>
 <li>
 <p>If configuration completes successfully, you <em>should</em> see messages in the terminal like this:</p>
-<pre><code class="language-bash">-- Configuring <span class="hljs-keyword">done</span> (30.9s)
+<pre><code class="language-bash">-- Configuring <span class="hljs-keyword">done</span> (376.5s)
 -- Generating <span class="hljs-keyword">done</span> (0.3s)
--- Build files have been written to: C:/Users/SURANI-PC/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release
+-- Build files have been written to: C:/Users/&lt;your username&gt;/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release
 </code></pre>
+<p>Keep this terminal <strong><em>open</em></strong> for the <a href="#6-compiling-the-game">next step</a>.</p>
 <hr>
-<p><sup>⭐</sup> <small>To avoid having to do this <strong>all</strong> the time, you can set <code>VCPKG_ROOT</code> as an environment variable <em>permanently</em>:</p>
-<h5 id="1-open-the-shell-configuration-file-bashrc-using-nano-with-the-following-command">1. Open the shell configuration file <code>(~/.bashrc)</code> using <code>nano</code> with the following command:</h5>
-<pre><code class="language-bash">nano ~/.bahsrc
+<p><sup>⭐</sup> <small>To avoid having to do this <strong>all</strong> the time, you can set <code>VCPKG_ROOT</code> as an environment variable <em>permanently</em> with the following command:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export VCPKG_ROOT=&quot;$HOME/vcpkg&quot;&#x27;</span> &gt;&gt; ~/.bashrc
 </code></pre>
-  <img src=".\assets\nano-edit-bashrc.png">
-<h5 id="2-add-the-following-line-to-the-file">2. Add the following line to the file:</h5>
-<pre><code class="language-bash"><span class="hljs-built_in">export</span> VCPKG_ROOT=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/vcpkg&quot;</span>
-</code></pre>
-<h5 id="3-press-ctrl--o-to-save-the-file-and-press-enter-to-confirm-the-file-name">3. Press <code>Ctrl + O</code> to save the file, and press <code>Enter</code> to confirm the file name.</h5>
-<h5 id="4-exit-nano-by-pressing-ctrl--x">4. Exit <code>nano</code> by pressing <code>Ctrl + X</code>.</h5>
-<hr>
-<p><small>If you're unsure, refer to the following video:</small></p>
-<blockquote>
-<details><summary>Video reference</summary><video src="./assets/vcpkg-bashrc.mp4" controls></details>
-</blockquote>
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_bLBVMGX8zv.gif">
   </small>
 </li>
 </ul>
@@ -3527,7 +3617,7 @@ Depending on your computer's hardware, this can either be quick or take some tim
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
-<details><summary>Compiling the game with cmake</summary><video src="./assets/cmake-game-compile.mp4" controls></details>
+<details><summary>Compiling the game with cmake</summary><video src="./assets/vmconnect_YAcevjsnFl.mp4" controls></details>
 </blockquote>
 </li>
 <li>
@@ -3540,15 +3630,12 @@ Depending on your computer's hardware, this can either be quick or take some tim
 <p>The executable can be found in the <code>build</code> directory:</p>
 <pre><code>build/ninja-x86_mingw_static_vcpkg-release/bin
 </code></pre>
-  <img src=".\assets\compiled-executable-ls.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_qQOXOTxHKi.png">
 <p>This path is relative to the <code>RingRacers</code> directory. The terminal opens in your home directory by default (<code>C:/Users/&lt;your username&gt;</code>).<br>
 Therefore, the full path to your compiled game would be:</p>
-<pre><code>C:/Users/&lt;your username/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release/bin/ringracers_v2.3.exe
+<pre><code>C:\Users\&lt;your username&gt;\RingRacersRepo\build\ninja-x86_mingw_static_vcpkg-release\bin\ringracers_v2.3.exe
 </code></pre>
-<p>Based on the example provided in this this guide, the full path to the compiled game would be:</p>
-<pre><code>C:/Users/SURANI-PC/RingRacersRepo/build/ninja-x86_mingw_static_vcpkg-release/bin/ringracers_v2.3.exe
-</code></pre>
-  <img src=".\assets\executable-path-windows.png">
+  <img src=".\assets\rr-compile-windows-guide\assets\vmconnect_aZrIqRHcrf.png">
 </li>
 <li>
 <p>To run the executable, you need to copy it into the folder where you've already installed Dr. Robotnik's Ring Racers.</p>
