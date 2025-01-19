@@ -160,6 +160,8 @@ Otherwise, proceed directly to the **Compiling** section.
 
 > :information_source: Copy (Ctrl+C) and paste (Ctrl+V) shortcuts do not work inside MSYS2 shells. You _can_ still right-click to copy and paste.
 
+- Using <img src="./assets/windows_explorer.png" width="23" height="20" style="vertical-align: middle"> File Explorer, navigate to the default MSYS2 installation folder: `C:\msys64`.
+
 - Open the **MINGW32** shell (`mingw32.exe`), as denoted by the <img src="./assets/mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.
     > <small> The MINGW32 shell is a **terminal** provided by MSYS2.</small> 
 
