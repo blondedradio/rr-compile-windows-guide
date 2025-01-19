@@ -3334,17 +3334,20 @@ To follow this guide accurately, you need to ensure that this variable exists on
 </blockquote>
 <ul>
 <li>
+<p>Ensure that any open <img src="windows_command.png" style="vertical-align: middle"> Command Prompt or <img src="powershell-icon.png" width="20" height="14" style="vertical-align: middle">   Windows PowerShell windows are closed.</p>
+</li>
+<li>
 <p>Search for 'environment variables' in the Start Menu and select '<strong>Edit environment variables for your account</strong>':</p>
-<img src=".\assets\vmconnect_qbo07sqsKT.png">
+<img src="vmconnect_qbo07sqsKT.png">
 <p>This will open the <strong>Environment Variables</strong> window, where you'll see the existing system environment variables.<br>
 Focus on the '<strong>User variables</strong>' section.</p>
-<img src=".\assets\vmconnect_kIyIQIibFL.png">
+<img src="vmconnect_kIyIQIibFL.png">
 <p>If the <code>HOME</code> variable is already present, proceed to the <a href="#2-install-git">next step</a>.<br>
 If <em>not</em>, continue reading.</p>
 </li>
 <li>
 <p>Click on the <code>New...</code> button. This will open a <code>New User Variable</code> window:</p>
-<img src=".\assets\vmconnect_njEycVGoIg.png">
+<img src="vmconnect_njEycVGoIg.png">
 <p>Add the <code>HOME</code> variable by filling out the form, as shown below:</p>
 <table>
 <thead>
@@ -3360,13 +3363,13 @@ If <em>not</em>, continue reading.</p>
 </tr>
 </tbody>
 </table>
-<img src=".\assets\vmconnect_UU4YxnYQKL.png">
+<img src="vmconnect_UU4YxnYQKL.png">
 <p>Replace <code>&lt;your username&gt;</code> with your actual username.<br>
 Click <code>OK</code> on the bottom-right when you're finished.</p>
 </li>
 <li>
 <p>The <code>HOME</code> variable should be visible in  '<strong>User variables</strong>' section.
-<img src=".\assets\vmconnect_qOPmj7ujfA.png"></p>
+<img src="vmconnect_qOPmj7ujfA.png"></p>
 <p>Click <code>OK</code> on the bottom-right to close the '<strong>Environment Variables</strong> window.</p>
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
@@ -3390,7 +3393,7 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 </blockquote>
 </li>
 <li>
-<p><a id="open-powershell"></a>Open <img src=".\assets\powershell-icon.png" width="20" height="14" style="vertical-align: middle">  Windows PowerShell by searching for it in the Start Menu.</p>
+<p><a id="open-powershell"></a>Open <img src="powershell-icon.png" width="20" height="14" style="vertical-align: middle">  Windows PowerShell by searching for it in the Start Menu.</p>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
 <details><summary>Opening Windows PowerShell</summary><video src="./assets/vmconnect_dmSnbCnu2M.mp4" controls></details>
@@ -3401,7 +3404,7 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 <pre><code class="language-powershell">git <span class="hljs-literal">--version</span>
 </code></pre>
 <p>If successful, you should see a message like this in your terminal:</p>
-  <img src=".\assets\vmconnect_XX74TfqE18.gif">
+  <img src="vmconnect_XX74TfqE18.gif">
 <p>Keep this terminal <strong><em>open</em></strong> for the <a href="#3-install-vcpckg">next step</a>.</p>
 </li>
 </ul>
@@ -3409,9 +3412,9 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 <ul>
 <li>
 <p>At this point, a PowerShell terminal should be open, defaulting to your home directory (<code>C:\Users\&lt;your username&gt;</code>), as shown here:</p>
-  <img src=".\assets\vmconnect_rZrk2hMb9s.png">
+  <img src="vmconnect_rZrk2hMb9s.png">
 <blockquote>
-<p><small>If you <em>haven't</em> got <img src=".\assets\powershell-icon.png" width="20" height="14" style="vertical-align: middle"> Windows PowerShell open, follow <a href="#open-powershell">these instructions</a>.</small></p>
+<p><small>If you <em>haven't</em> got <img src="powershell-icon.png" width="20" height="14" style="vertical-align: middle"> Windows PowerShell open, follow <a href="#open-powershell">these instructions</a>.</small></p>
 </blockquote>
 </li>
 <li>
@@ -3432,7 +3435,7 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 <pre><code class="language-bash">.\vcpkg --version
 </code></pre>
 <p>If successful, the terminal will display the version of <code>vcpkg</code> that has been installed:</p>
-  <img src=".\assets\vmconnect_70IhSxQpcc.png">
+  <img src="vmconnect_70IhSxQpcc.png">
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
 <blockquote>
@@ -3453,7 +3456,7 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 </li>
 <li>
 <p>Once installation completes, a terminal window will open. This confirms that <strong>MSYS2</strong> was installed succesfully.</p>
-  <img src=".\assets\vmconnect_RAgEMGJ6mI.png">  
+  <img src="vmconnect_RAgEMGJ6mI.png">  
 <p>You may now close this window and proceed to the <a href="#compiling-time">Compiling</a> instructions.</p>
 <hr>
 <p><small>If you're unsure, refer to the following video:</small></p>
@@ -3473,14 +3476,14 @@ Click <code>OK</code> on the bottom-right when you're finished.</p>
 </blockquote>
 <ul>
 <li>
-<p>Using <img src=".\assets\windows_explorer.png" width="23" height="20" style="vertical-align: middle"> File Explorer, navigate to the default MSYS2 installation folder: <code>C:\msys64</code>.</p>
+<p>Using <img src="windows_explorer.png" width="23" height="20" style="vertical-align: middle"> File Explorer, navigate to the default MSYS2 installation folder: <code>C:\msys64</code>.</p>
 </li>
 <li>
-<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src=".\assets\mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
+<p>Open the <strong>MINGW32</strong> shell (<code>mingw32.exe</code>), as denoted by the <img src="mingw32-icon.png" width="20" height="20" style="vertical-align: middle"> icon.</p>
 <blockquote>
 <p><small> The MINGW32 shell is a <strong>terminal</strong> provided by MSYS2.</small></p>
 </blockquote>
-  <img src=".\assets\vmconnect_vakLX3DiJs.png">
+  <img src="vmconnect_vakLX3DiJs.png">
 <p>Like PowerShell, this terminal opens in your home directory by default (<code>C:\Users\&lt;your username&gt;</code>).<br>
 As represented by the tilde symbol (<code>~</code>).</p>
 <hr>
@@ -3496,7 +3499,7 @@ As represented by the tilde symbol (<code>~</code>).</p>
 <p>Update the package database and all installed packages by running the following command in the shell:</p>
 <pre><code class="language-bash">pacman -Syu
 </code></pre>
-  <img src=".\assets\vmconnect_NNfPQ9cFMb.gif">
+  <img src="vmconnect_NNfPQ9cFMb.gif">
 <p>When prompted with <code>Proceed with installation? [Y/n]</code>, ype <code>Y</code> in the terminal and press <code>Enter</code>.</p>
 </li>
 <li>
@@ -3514,7 +3517,7 @@ To open the terminal window again, follow the instructions in <a href="#1-openin
 <p>In the <strong>MINGW32</strong> shell, execute the following command to install all the required packages:</p>
 <pre><code class="language-bash">pacman -S make git mingw-w64-i686-gcc mingw-w64-i686-ninja mingw-w64-i686-cmake
 </code></pre>
-  <img src=".\assets\vmconnect_8H2ChLGlve.png">
+  <img src="vmconnect_8H2ChLGlve.png">
 <p>When prompted with:</p>
 <pre><code>Proceed with installation? [Y/n]
 </code></pre>
@@ -3526,7 +3529,7 @@ Wait for the packages to finish downloading.</p>
 <pre><code class="language-bash"><span class="hljs-built_in">which</span> ninja make cmake gcc g++ git
 </code></pre>
 <p>If the packages <em>have</em> been installed succesfully, each command will return the path to its respective executable:</p>
-  <img src=".\assets\vmconnect_DN5b3c5GFJ.png">
+  <img src="vmconnect_DN5b3c5GFJ.png">
 <p>Keep this terminal <strong><em>open</em></strong> for the <a href="#4-downloading-the-games-source-code">next step</a>.</p>
 </li>
 </ul>
@@ -3539,7 +3542,7 @@ Wait for the packages to finish downloading.</p>
 <p>Verify that the terminal is in your home directory by running the following command:</p>
 <pre><code>cd $HOME
 </code></pre>
-  <img src=".\assets\vmconnect_oWPQN1GUCv.png">
+  <img src="vmconnect_oWPQN1GUCv.png">
 <blockquote>
 <p><small>The tilde symbol (~) represents your home directory.</small></p>
 </blockquote>
@@ -3559,7 +3562,7 @@ Wait for the packages to finish downloading.</p>
 <p><a id="ringracers-repo-inst"></a>Navigate to the new <code>RingRacersRepo</code> folder by running the command:</p>
 <pre><code class="language-bash"><span class="hljs-built_in">cd</span> RingRacersRepo
 </code></pre>
-  <img src=".\assets\vmconnect_NNr7fgOKer.gif">
+  <img src="vmconnect_NNr7fgOKer.gif">
 </li>
 <li>
 <p>Switch the current branch to <strong>v2.3</strong> with the following command:</p>
@@ -3575,7 +3578,7 @@ Refer to the <a href="#ringracers-repo-inst">previous</a> step for instructions.
 <pre><code class="language-bash">git branch
 </code></pre>
 <p>You will see an asterisk (*) next to the current branch, which should say <code>(HEAD detached at v2.3)</code>.</p>
-  <img src=".\assets\vmconnect_uv9MbLYwEU.png">
+  <img src="vmconnect_uv9MbLYwEU.png">
 <p>Keep this terminal <strong><em>open</em></strong> for the <a href="#5-configuring-the-game-for-compilation">next step</a>.</p>
 </li>
 </ul>
@@ -3591,7 +3594,7 @@ Refer to the <a href="#ringracers-repo-inst">previous</a> step for instructions.
 <pre><code class="language-bash">cmake --preset ninja-x86_mingw_static_vcpkg-release
 </code></pre>
 <p><code>cmake</code> will begin configuriation and grab <em>all</em> the required dependecies needed to compile the game via <code>vcpkg</code>.</p>
-  <img src=".\assets\vmconnect_UYKsYjhbCQ.png">
+  <img src="vmconnect_UYKsYjhbCQ.png">
 <p>Since this is your first time running the configuration, it may take some time, so be patient.<br>
 Future configurations will be faster.</p>
 </li>
@@ -3606,7 +3609,7 @@ Future configurations will be faster.</p>
 <p><sup>⭐</sup> <small>To avoid having to do this <strong>all</strong> the time, you can set <code>VCPKG_ROOT</code> as an environment variable <em>permanently</em> with the following command:</p>
 <pre><code class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export VCPKG_ROOT=&quot;$HOME/vcpkg&quot;&#x27;</span> &gt;&gt; ~/.bashrc
 </code></pre>
-  <img src=".\assets\vmconnect_bLBVMGX8zv.gif">
+  <img src="vmconnect_bLBVMGX8zv.gif">
   </small>
 </li>
 </ul>
@@ -3634,12 +3637,12 @@ Depending on your computer's hardware, this can either be quick or take some tim
 <p>The executable can be found in the <code>build</code> directory:</p>
 <pre><code>build/ninja-x86_mingw_static_vcpkg-release/bin
 </code></pre>
-  <img src=".\assets\vmconnect_qQOXOTxHKi.png">
+  <img src="vmconnect_qQOXOTxHKi.png">
 <p>This path is relative to the <code>RingRacers</code> directory. The terminal opens in your home directory by default (<code>C:/Users/&lt;your username&gt;</code>).<br>
 Therefore, the full path to your compiled game would be:</p>
 <pre><code>C:\Users\&lt;your username&gt;\RingRacersRepo\build\ninja-x86_mingw_static_vcpkg-release\bin\ringracers_v2.3.exe
 </code></pre>
-  <img src=".\assets\vmconnect_aZrIqRHcrf.png">
+  <img src="vmconnect_aZrIqRHcrf.png">
 </li>
 <li>
 <p>To run the executable, you need to copy it to the folder where you've already installed Dr. Robotnik's Ring Racers.</p>

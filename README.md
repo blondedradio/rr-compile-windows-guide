@@ -27,6 +27,7 @@ Otherwise, proceed directly to the **Compiling** section.
 > One of the required packages, **MSYS2**, uses the `$HOME` environment variable. \
 > To follow this guide accurately, you need to ensure that this variable exists on your system.
 
+- Ensure that any open <img src="./assets/windows_command.png" style="vertical-align: middle"> Command Prompt or <img src="./assets/powershell-icon.png" width="20" height="14" style="vertical-align: middle">   Windows PowerShell windows are closed.
 - Search for 'environment variables' in the Start Menu and select '**Edit environment variables for your account**':
   
   <img src="./assets/vmconnect_qbo07sqsKT.png">
