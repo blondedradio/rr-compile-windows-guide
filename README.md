@@ -356,5 +356,5 @@ Otherwise, proceed directly to the **Compiling** section.
 
     <img src="./assets/vmconnect_aZrIqRHcrf.png">
 
-- To run the executable, you need to copy it into the folder where you've already installed Dr. Robotnik's Ring Racers.
+- To run the executable, you need to copy it to the folder where you've already installed Dr. Robotnik's Ring Racers.
 </details>
